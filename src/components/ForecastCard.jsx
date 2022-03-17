@@ -3,7 +3,9 @@ import { round } from 'lodash';
 import Card from './Card';
 import WeatherIcon from './WeatherIcon';
 
+
 const ForecastCard = ({ forecast }) => {
+
   return (
     <Card alignItems="center" shouldShowSkeleton isLoaded={!forecast.isLoading}>
       <Text>{forecast?.applicableDate}</Text>

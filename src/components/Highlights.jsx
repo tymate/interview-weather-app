@@ -8,6 +8,11 @@ const Highlights = () => {
   const { data, isLoading } = useWeather();
   const today = data?.data?.consolidatedWeather?.[0];
 
+  const windDirection = today?.windDirectionCompass;
+  const angle = windDirection == "N" ? 180 : 
+                windDirection == "S" ? -180 : 
+                windDirection == "E" ? 90 : -90;
+
   console.log(today);
   return (
     <Stack spacing={4}>
@@ -26,7 +31,8 @@ const Highlights = () => {
           }
           footer={
             <HStack>
-              <WindHeading />
+              <WindHeading
+              angle={angle} />
               <Text color="gray.500">{today?.windDirectionCompass}</Text>
             </HStack>
           }
