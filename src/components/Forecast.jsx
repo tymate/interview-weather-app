@@ -11,7 +11,7 @@ const Forecast = () => {
 
   return (
     <Grid templateColumns="repeat(auto-fit, minmax(120px, 1fr))" gap={4}>
-      {daysForecasts.slice(0, 4).map(forecast => (
+      {daysForecasts.slice(0, 5).map(forecast => (
         <ForecastCard key={forecast.id} forecast={forecast} />
       ))}
     </Grid>
