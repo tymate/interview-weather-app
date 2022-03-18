@@ -9,9 +9,10 @@ const Highlights = () => {
   const today = data?.data?.consolidatedWeather?.[0];
 
   const windDirection = today?.windDirectionCompass;
-  const angle = windDirection == "N" ? 180 : 
-                windDirection == "S" ? -180 : 
-                windDirection == "E" ? 90 : -90;
+  const angle = windDirection == "N" || "NE" || "NW" ? 180 : 
+                windDirection == "S" || "SE" || "SW" ? -180 : 
+                windDirection == "E" || "ES" || "EN" ? 90 :
+                windDirection == "W" || "WS" || "WN" ? -90 : 180;
 
   console.log(today);
   return (
