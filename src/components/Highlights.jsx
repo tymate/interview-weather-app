@@ -3,16 +3,19 @@ import { useWeather } from '../hooks';
 import HighlightCard from './HighlightCard';
 import { round } from 'lodash';
 import WindHeading from './Icons/WindHeading';
+// import { angle } from '../utils/angle.js';
 
 const Highlights = () => {
   const { data, isLoading } = useWeather();
   const today = data?.data?.consolidatedWeather?.[0];
 
+  //  ternary operator to determine the angle of the compass
   const windDirection = today?.windDirectionCompass;
-  const angle = windDirection == "N" || "NE" || "NW" ? 180 : 
-                windDirection == "S" || "SE" || "SW" ? -180 : 
-                windDirection == "E" || "ES" || "EN" ? 90 :
-                windDirection == "W" || "WS" || "WN" ? -90 : 180;
+  const angle = windDirection == "N" ? 0 : windDirection == "NNE" ? 30 :  windDirection == "NE" ? 50 :  windDirection == "ENE" ? 70 :
+  windDirection == "E" ? 90 : windDirection == "ESE" ? 120 : windDirection == "SE" ? 140 : windDirection == "SSE" ? 160 :
+  windDirection == "S" ? 180 : windDirection == "SSW" ? 210 : windDirection == "SW" ? 230 : windDirection == "WSW" ? 250 :
+  windDirection == "W" ? 270 : windDirection == "WNW" ? 300 : windDirection == "NW" ? 320 : windDirection == "NNW" ? 340 : 0
+
 
   console.log(today);
   return (
