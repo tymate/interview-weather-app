@@ -1,7 +1,10 @@
 import { memo } from 'react';
 
+
 const WindHeading = props => (
+
   <svg
+    transform={`rotate (${props.angle})`}
     width="1em"
     height="1em"
     viewBox="0 0 24 24"
@@ -18,6 +21,7 @@ const WindHeading = props => (
       strokeLinejoin="round"
     />
   </svg>
+
 );
 
 export default memo(WindHeading);
