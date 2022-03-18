@@ -16,6 +16,11 @@ const theme = extendTheme({
     },
   },
 
+  fonts: {
+    heading: 'Be Vietnam Pro, sans-serif',
+    body: 'Be Vietnam Pro, sans-serif',
+  },
+
   components: {
     Progress: {
       baseStyle: {

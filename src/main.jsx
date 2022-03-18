@@ -5,6 +5,8 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import AppProvider from './providers/AppProvider';
 import { theme } from './ui';
+import '@fontsource/be-vietnam-pro'
+
 
 const queryClient = new QueryClient();
 
