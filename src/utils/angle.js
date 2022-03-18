@@ -34,7 +34,7 @@ export function angle(windDirection) {
       ? 320
       : windDirection == 'NNW'
       ? 340
-      : 0; // goes to 0° if it's not working
+      : 0; // goes to 0° if the value is undefined
   } catch (err) {
     return '';
   } 

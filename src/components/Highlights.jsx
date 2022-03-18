@@ -3,7 +3,7 @@ import { useWeather } from '../hooks';
 import HighlightCard from './HighlightCard';
 import { round } from 'lodash';
 import WindHeading from './Icons/WindHeading';
-import { angle } from '../utils/angle'
+import { angle } from '../utils/angle';
 
 const Highlights = () => {
   const { data, isLoading } = useWeather();
@@ -27,8 +27,7 @@ const Highlights = () => {
           }
           footer={
             <HStack>
-              <WindHeading
-              angle={angle(today?.windDirectionCompass)} />
+              <WindHeading angle={angle(today?.windDirectionCompass)} />
               <Text color="gray.500">{today?.windDirectionCompass}</Text>
             </HStack>
           }

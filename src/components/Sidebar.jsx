@@ -8,7 +8,6 @@ const Sidebar = () => {
   const { data } = useWeather();
   const today = data?.data?.consolidatedWeather?.[0];
 
-  console.log('hello', today);
   return (
     <Box backgroundColor="gray.800" color="gray.500">
       <Stack
@@ -20,14 +19,14 @@ const Sidebar = () => {
       >
         <span /> {/* Intentionnaly left blank */}
         <Stack alignItems="center" spacing={0}>
-        <Select placeholder="Choose your city" variant="unstyled">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
-        </Select>
+          <Select placeholder="Choose your city" variant="flushed">
+            <option value="option1">Lille</option>
+            <option value="option2">Lyon</option>
+            <option value="option3">Bordeaux</option>
+          </Select>
           <WeatherIcon width="100%" abbr={today?.weatherStateAbbr} />
           <Heading as="h1" fontSize="8xl" color="white">
-            {round(today?.maxTemp) ? round(today?.maxTemp) : '...'}
+            {Boolean(today?.maxTemp) ? round(today?.maxTemp) : undefined}
             <Text fontSize="4xl" display="inline" color="gray.500">
               °C
             </Text>

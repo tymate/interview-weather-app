@@ -5,5 +5,5 @@ export function formatDate(date) {
     return format(new Date(date), 'eee d MMM');
   } catch (err) {
     return '';
-  } // date formatting exemple : Fri 18 Mar
+  } // this date formatting exemple : Fri 18 Mar
 }
