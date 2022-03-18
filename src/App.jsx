@@ -11,7 +11,7 @@ const App = () => {
       backgroundColor="gray.900"
       templateColumns="minmax(15em, 1fr) 3fr"
       sx={{
-        '@media (max-width: 400px)': {
+        '@media (max-width: 450px)': {
           display: 'flex',
           flexDirection: 'column'
         },
