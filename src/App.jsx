@@ -10,7 +10,13 @@ const App = () => {
       minH="100vh"
       backgroundColor="gray.900"
       templateColumns="minmax(15em, 1fr) 3fr"
-    >
+      sx={{
+        '@media (max-width: 400px)': {
+          display: 'flex',
+          flexDirection: 'column'
+        },
+      }}
+      >
       <Sidebar />
       <MainContent>
         <Forecast />
